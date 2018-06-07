@@ -1,0 +1,7 @@
+{
+  "name": "cart",
+  "short_name": "cart",
+  "description": "Elements for interacting with a shopping cart",
+  "start_url": "/",
+  "display": "standalone"
+}

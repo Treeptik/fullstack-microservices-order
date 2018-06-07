@@ -1,0 +1,36 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="order-item.html">
+
+<dom-module id="order-item-list">
+  <template>
+    <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    </style>
+    
+    <div class="container">
+      <template is="dom-repeat" items="[[orderItems]]">
+        <order-item item="[[item]]"></order-item>
+      </template>
+    </div>
+    <slot></slot>
+  </template>
+  <script>
+  class OrderItemList extends Polymer.Element {
+    static get is() { return 'order-item-list'; }
+    
+    static get properties() {
+      return {
+        orderItems: Array
+      };
+    }
+  }
+  
+  window.customElements.define(OrderItemList.is, OrderItemList);
+  </script>
+</dom-module>

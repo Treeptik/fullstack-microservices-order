@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  db:
+    image: mongo:3.4.2
+    ports:
+    - 27017:27017
+    volumes:
+    - db_data:/data/db
+
+volumes:
+  db_data:
+

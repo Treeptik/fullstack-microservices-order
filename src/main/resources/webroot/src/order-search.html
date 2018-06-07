@@ -1,0 +1,36 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+
+<dom-module id="order-search">
+  <template>
+    <iron-ajax auto url="[[url]]" params='{ "user": "[[user]]" }' handle-as="json" on-response="handleResponse"></iron-ajax>
+    
+    <paper-input placeholder="Search"></paper-input><paper-icon-button icon="icons:search"></paper-icon-button>
+  </template>
+  <script>
+  class OrderSearch extends Polymer.Element {
+    static get is() { return 'order-search'; }
+    static get properties() {
+      return {
+        orders: {
+          type: Array,
+          value: [],
+          notify: true
+        },
+        url: String,
+        user: String
+      };
+    }
+    
+    handleResponse(event) {
+      this.orders = event.detail.response;
+    }
+  }
+  
+  window.customElements.define(OrderSearch.is, OrderSearch);
+  </script>
+</dom-module>

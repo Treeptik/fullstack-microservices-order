@@ -1,0 +1,19 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="order-item">
+  <template>
+  [[item.item.name]] × [[item.quantity]]
+  </template>
+  <script>
+  class OrderItem extends Polymer.Element {
+    static get is() { return 'order-item'; }
+    static get properties() {
+      return {
+        item: Object
+      };
+    }
+  }
+  
+  window.customElements.define(OrderItem.is, OrderItem);
+  </script>
+</dom-module>
