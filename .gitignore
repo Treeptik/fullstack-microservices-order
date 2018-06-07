@@ -1,5 +1,5 @@
 
-# Created by https://www.gitignore.io/api/git,java,maven,eclipse,intellij,intellij+iml,intellij+all,vim,linux,macos,windows
+# Created by https://www.gitignore.io/api/git,java,vertx,maven,eclipse,intellij,intellij+iml,intellij+all,vim,linux,macos,windows
 
 ### Eclipse ###
 
@@ -54,10 +54,10 @@ local.properties
 .worksheet
 
 ### Eclipse Patch ###
-# Eclipse Core		
+# Eclipse Core
 .project
 
-# JDT-specific (Eclipse Java Development Tools)		
+# JDT-specific (Eclipse Java Development Tools)
 .classpath
 
 # Annotation Processing
@@ -288,6 +288,9 @@ buildNumber.properties
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
 
+### Vertx ###
+# Vertx cache directory
+.vertx
 ### Vim ###
 # swap
 .sw[a-p]
@@ -321,4 +324,4 @@ $RECYCLE.BIN/
 *.lnk
 
 
-# End of https://www.gitignore.io/api/git,java,maven,eclipse,intellij,intellij+iml,intellij+all,vim,linux,macos,windows
+# End of https://www.gitignore.io/api/git,java,vertx,maven,eclipse,intellij,intellij+iml,intellij+all,vim,linux,macos,windows
