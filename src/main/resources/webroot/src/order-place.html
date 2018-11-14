@@ -7,7 +7,7 @@
 <dom-module id="order-place">
   <template>
     <iron-ajax id="orderRequest" url="[[url]]" method="POST" body="[[_body(user, items)]]" content-type="application/json"></iron-ajax>
-    <paper-icon-button icon="icons:add" on-click="order"></paper-icon-button>
+    <paper-icon-button icon="icons:payment" on-click="order"></paper-icon-button>
   </template>
   <script>
   class OrderPlace extends Polymer.Element {

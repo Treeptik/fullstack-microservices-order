@@ -31,9 +31,24 @@ public class OrderService {
 				rc.fail(res.cause());
 			}
 			
-			JsonArray items = new JsonArray(res.result());
+			JsonArray orders = new JsonArray(res.result());
 			
-			rc.response().end(items.encodePrettily());
+			for (Object o : orders) {
+				JsonObject order = (JsonObject) o;
+				
+				double total = 0d;
+				for (Object i : order.getJsonArray("items")) {
+					JsonObject item = (JsonObject) i;
+					
+					double price = item.getJsonObject("item").getDouble("price");
+					double quantity = item.getDouble("quantity");
+					total += price * quantity;
+				}
+				
+				order.put("total", total);
+			}
+			
+			rc.response().end(orders.encodePrettily());
 		});
 	}
 

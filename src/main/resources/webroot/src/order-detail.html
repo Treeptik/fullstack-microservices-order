@@ -20,7 +20,7 @@
     <paper-card>
       <div class="card-content">
         <div class="order-header">Order [[order._id]]</div>
-        <p>[[_format(0.0)]]&nbsp;€</p>
+        <p>[[_format(order.total)]]&nbsp;€</p>
       </div>
       <div class="card-actions">
         <order-item-list order-items="[[order.items]]"></order-item-list>
